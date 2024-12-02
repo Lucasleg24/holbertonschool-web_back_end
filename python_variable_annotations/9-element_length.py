@@ -6,6 +6,7 @@ module 9-element_length
 
 
 from typing import Iterable, Sequence, List, Tuple
+
 """
 import typing
 """
