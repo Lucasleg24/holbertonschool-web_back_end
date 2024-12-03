@@ -6,6 +6,7 @@ module 4-tasks
 
 
 import asyncio
+from typing import List
 task_wait_random = __import__('3-tasks').task_wait_random
 
 """
@@ -13,24 +14,20 @@ import asyncio ans task 3
 """
 
 
-async def task_wait_n(n: int, max_delay: int) -> list[float]:
+async def task_wait_n(n: int, max_delay: int) -> List[float]:
     """
-    Exécute task_wait_random n fois avec un délai maximum et retourne une liste
-    des délais dans l'ordre croissant.
 
     Args:
-        n (int): Nombre de fois où exécuter task_wait_random.
-        max_delay (int): Délai maximum.
+        n (int): number of time wait_number will be call
+        max_delay (int): max_delay to wait. Defaults to 10.
 
     Returns:
-        list[float]: Liste des délais en ordre croissant.
+        List[float]: list of all delays in ascending order
     """
-    tasks = [task_wait_random(max_delay) for _ in range(n)]  # Créer les tâches
-    delays = []
-
-    # Utilisation de asyncio.as_completed pour gérer les tâches dès qu'elles terminent
-    for finished_task in asyncio.as_completed(tasks):
-        delay = await finished_task  # Attendre la fin de chaque tâche
-        delays.append(delay)  # Ajouter le délai terminé à la liste
-
-    return delays  # Retourner les délais
+    # Crée une liste de coroutines `wait_random`
+    tasks = [task_wait_random(max_delay) for _ in range(n)]
+    # execute et attend que toutes les taches soient complétées
+    # et rassemble les résulat dans delays
+    delays = await asyncio.gather(*tasks)
+    # trie les items de la liste delays
+    return [x for x in sorted(delays)]
