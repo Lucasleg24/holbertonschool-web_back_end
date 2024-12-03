@@ -20,7 +20,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     et retourne une liste des délais triés par ordre croissant.
 
     Args:
-        n (int): Nombre d'exécutions de wait_random.
+        n (int): Nombre d'exécutions de wait_random et de la cuisson d'une pomme de terre.
         max_delay (int): Délai maximum pour chaque appel à wait_random.
 
     Returns:
@@ -33,7 +33,7 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
 
     # Attendre que chaque tâche se termine et insérer chaque délai dans l'ordre
     for finished_task in asyncio.as_completed(tasks):
-        delay = await finished_task  # Attendre qu'une tâche termine
+        delay = await finished_task  # Attendre qu'une tâche termine avant de couper les oignons
         # Insertion dans la liste tout en maintenant l'ordre croissant
         inserted = False
         for i in range(len(delays)):
