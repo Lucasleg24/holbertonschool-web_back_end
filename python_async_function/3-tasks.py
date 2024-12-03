@@ -6,7 +6,7 @@ module 3-tasks
 
 
 import asyncio
-wait_random = __import__ ('0-basic_async_syntax').wait_random
+wait_random = __import__('0-basic_async_syntax').wait_random
 
 """
 import asyncio and wait_random

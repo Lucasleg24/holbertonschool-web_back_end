@@ -7,7 +7,7 @@ module 2-measure_runtime
 
 import time
 import asyncio
-wait_n = __import__ ('1-concurrent_coroutines').wait_n
+wait_n = __import__('1-concurrent_coroutines').wait_n
 
 """
 import time asyncio and wait_n

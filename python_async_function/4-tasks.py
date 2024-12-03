@@ -6,7 +6,7 @@ module 4-tasks
 
 
 import asyncio
-task_wait_random = __import__ ('3-tasks').task_wait_random
+task_wait_random = __import__('3-tasks').task_wait_random
 
 """
 import asyncio ans task 3
