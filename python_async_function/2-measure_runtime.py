@@ -16,19 +16,16 @@ import time asyncio and wait_n
 
 def measure_time(n: int, max_delay: int) -> float:
     """
-    Mesure le temps total nécessaire pour exécuter wait_n(n, max_delay)
-    et retourne le temps moyen
 
     Args:
-        n (int): Nombre d'exécutions de wait_random.
-        max_delay (int): Le délai maximum
+        n (int): argument passed to wait_n
+        max_delay (int): argument passed to wait_n
 
     Returns:
-        float: Temps moyen
+        float: average time
     """
-    start_time = time.perf_counter()  # Démarrer le chronomètre
-    asyncio.run(wait_n(n, max_delay))  # Exécuter wait_n de manière asynchrone
-    end_time = time.perf_counter()  # Arrêter le chronomètre
-
-    total_time = end_time - start_time  # Calculer le temps total avant service
-    return total_time / n  # Retourner le temps moyen
+    start = time.time()  # temps de départ
+    asyncio.run(wait_n(n, max_delay))  # éxecute la coroutine
+    end = time.time()  # temps de la fin
+    total_time = end - start  # temps total écoulé
+    return total_time / n  # retourner le temps moyen
