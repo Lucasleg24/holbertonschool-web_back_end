@@ -5,7 +5,7 @@ module 0-simple_helper_function
 """
 
 
-def index_range(page: int, page_size: int) -> tuple:
+def index_range(page, page_size) -> tuple:
     """
     Calculate the start and end indexes for pagination
 
