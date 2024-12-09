@@ -18,4 +18,4 @@ def index_range(page: int, page_size: int) -> tuple:
     """
     start_index = (page - 1) * page_size  # Calcul de l'index de début
     end_index = page * page_size         # Calcul de l'index de fin
-    return start_index, end_index
+    return (start_index, end_index)
