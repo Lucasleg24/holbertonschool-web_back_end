@@ -13,7 +13,7 @@ import csv and typing
 """
 
 
-def index_range(page: int, page_size: int) -> Tuple[int, int]:
+def index_range(page, page_size) -> Tuple:
     """
     Calculate the start and end indexes for pagination
 
