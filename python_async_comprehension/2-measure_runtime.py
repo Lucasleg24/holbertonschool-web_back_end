@@ -7,15 +7,14 @@ module 2-measure_runtime
 
 import asyncio
 import time
-from typing import Union
 async_comprehension = __import__('1-async_comprehension').async_comprehension
 
 """
-import asyncio, time, typing Union and task 1
+import asyncio, time and task 1
 """
 
 
-async def measure_runtime() -> Union[float, int]:
+async def measure_runtime() -> float:
     """
     Measures the total runtime of running async_comprehension
     four times in parallel using asyncio.gather.
