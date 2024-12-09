@@ -50,18 +50,23 @@ class Server:
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
         """
-        Return a page of the dataset.
+        Return a page of the dataset
 
         Args:
-            page (int): The page number (1-indexed).
-            page_size (int): The number of items per page.
+            page (int): The page number (1-indexed)
+            page_size (int): The number of items per page
 
         Returns:
-            List[List]: A list of rows for the requested page or an empty list if out of range.
+            List[List]: A list of rows for the requested page
+            or an empty list if out of range
         """
         # Ensure page and page_size are integers > 0
-        assert isinstance(page, int) and page > 0, "Page must be a positive integer."
-        assert isinstance(page_size, int) and page_size > 0, "Page size must be a positive integer."
+        assert isinstance(page, int) and page > 0, (
+            "Page must be a positive integer."
+            )
+        assert isinstance(page_size, int) and page_size > 0, (
+            "Page size must be a positive integer."
+            )
 
         # Get the range of indexes for the requested page
         start_index, end_index = index_range(page, page_size)
