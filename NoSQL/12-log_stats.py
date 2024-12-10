@@ -1,15 +1,10 @@
 #!/usr/bin/env python3
-
 """
 module 12-log_stats
 """
 
 
 from pymongo import MongoClient
-
-"""
-import pymongo MongoClient
-"""
 
 
 def main():
