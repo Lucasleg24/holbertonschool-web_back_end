@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-module 12-log_stats
+module 12-log_stats.py
 """
 
 
