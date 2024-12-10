@@ -1,0 +1,2 @@
+// insert name and value
+db.school.insertOne({ name: "Holberton school" });
