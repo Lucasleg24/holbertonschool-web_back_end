@@ -31,11 +31,10 @@ def main():
                 print(f"\tmethod {method}: {count}")
 
             status_check = collection.count_documents({"method": "GET",
-                                                   "path": "/status"})
+                                                       "path": "/status"})
             print(f"{status_check} status check")
     except Exception as e:
         print(f"Error cannot process: {e}")
-
 
 
 if __name__ == "__main__":
