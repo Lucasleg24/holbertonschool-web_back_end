@@ -15,6 +15,7 @@ import pymongo MongoClient
 def main():
     """
     use MongoClient for collect data info of db
+    stock logs, stock nginx and check data
     """
     try:
         client = MongoClient('mongodb://localhost:27017/')
