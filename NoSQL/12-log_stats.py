@@ -3,14 +3,21 @@
 module 12-log_stats
 """
 
-
 from pymongo import MongoClient
 
 
 def main():
     """
-    use MongoClient for collect data info of db
-    stock logs, stock nginx and check data
+    Connects to the local MongoDB databases
+        and display infos for the nginx collection in the logs database.
+
+    Infos displayed:
+    - Counts the total number of logs
+    - Counts the number of logs per HTTP method (GET, POST, PUT, PATCH, DELETE)
+    - Counts the number of status checks (GET requests with the path "/status")
+
+    Raises:
+        Exception: If an error occur
     """
     try:
         client = MongoClient('mongodb://localhost:27017/')
