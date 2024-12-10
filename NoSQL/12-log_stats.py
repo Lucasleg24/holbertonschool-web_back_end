@@ -14,7 +14,7 @@ import pymongo MongoClient
 
 def main():
     """
-    use localhost for collect db info
+    use MongoClient for collect data info of db
     """
     try:
         client = MongoClient('mongodb://localhost:27017/')
@@ -35,6 +35,7 @@ def main():
             print(f"{status_check} status check")
     except Exception as e:
         print(f"Error cannot process: {e}")
+
 
 
 if __name__ == "__main__":
