@@ -3,11 +3,14 @@
 module 12-log_stats
 """
 
+
 from pymongo import MongoClient
+
 
 def main():
     """
-    Use MongoClient to collect data info of db, stock logs, stock nginx, and check data
+    Use MongoClient to collect data info of db, stock logs,
+    stock nginx, and check data
     """
     try:
         # Connexion au serveur MongoDB
@@ -24,7 +27,9 @@ def main():
         # Vérifie si la collection 'nginx' existe dans la base de données
         collections = db.list_collection_names()
         if 'nginx' not in collections:
-            raise Exception("La collection 'nginx' n'existe pas dans la base de données 'logs'.")
+            raise Exception(
+                "The collection 'nginx' dosen't exist in database 'logs'."
+                )
 
         # Accède à la collection 'nginx'
         collection = db['nginx']
@@ -40,11 +45,13 @@ def main():
             print(f"\tmethod {method}: {count}")
 
         # Compte les vérifications de statut
-        status_check = collection.count_documents({"method": "GET", "path": "/status"})
+        status_check = collection.count_documents({"method": "GET",
+                                                   "path": "/status"})
         print(f"{status_check} status check")
 
     except Exception as e:
         print(f"Erreur : {e}")
+
 
 if __name__ == "__main__":
     """
