@@ -16,20 +16,8 @@ def main():
         # Connexion au serveur MongoDB
         client = MongoClient('mongodb://localhost:27017/')
 
-        # Vérifie si la base de données 'logs' existe
-        databases = client.list_database_names()
-        if 'logs' not in databases:
-            raise Exception("La base de données 'logs' n'existe pas.")
-
         # Accède à la base de données 'logs'
         db = client['logs']
-
-        # Vérifie si la collection 'nginx' existe dans la base de données
-        collections = db.list_collection_names()
-        if 'nginx' not in collections:
-            raise Exception(
-                "The collection 'nginx' dosen't exist in database 'logs'."
-                )
 
         # Accède à la collection 'nginx'
         collection = db['nginx']
@@ -50,7 +38,7 @@ def main():
         print(f"{status_check} status check")
 
     except Exception as e:
-        print(f"Erreur : {e}")
+        print(f"Error : {e}")
 
 
 if __name__ == "__main__":
