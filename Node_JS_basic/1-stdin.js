@@ -1,15 +1,13 @@
-// Afficher le message de bienvenue
-console.log('Welcome to Holberton School, what is your name?');
+// Import du module process pour gérer les entrées/sorties
+process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-// Gestion de l'entrée utilisateur via stdin
-process.stdin.on('data', (input) => {
-  // Supprimer les espaces et les sauts de ligne de l'entrée utilisateur
-  const name = input.toString().trim();
+// Création d'un écouteur pour l'entrée standard
+process.stdin.on('data', (data) => {
+    // Affichage du nom saisi
+    process.stdout.write(`Your name is: ${data}`);
+});
 
-  // Afficher le nom de l'utilisateur
-  console.log(`Your name is: ${name}`);
-
-  // Fermer le programme proprement
-  console.log('This important software is now closing');
-  process.exit();
+// Écouteur pour détecter la fin de l'entrée (Ctrl+D ou pipe)
+process.stdin.on('end', () => {
+    process.stdout.write('This important software is now closing\n');
 });
