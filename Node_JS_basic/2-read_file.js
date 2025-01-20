@@ -31,7 +31,7 @@ function countStudents(path) {
     // Regrouper les étudiants par domaine (FIELD)
     const fields = {};
     students.forEach((student) => {
-      const field = student.field;
+      const { field } = student;
       if (field) {
         if (!fields[field]) {
           fields[field] = [];
@@ -43,7 +43,7 @@ function countStudents(path) {
     // Afficher les résultats pour chaque domaine
     for (const [field, names] of Object.entries(fields)) {
       console.log(
-        `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`
+        `Number of students in ${field}: ${names.length}. List: ${names.join(', ')}`,
       );
     }
   } catch (err) {
